@@ -22,8 +22,7 @@
             }
         },
         mounted() {
-            fetch('http://127.0.0.1:8000/api/books/')
-            // fetch('https://booksbackendapi.herokuapp.com/api/books/')
+            fetch('https://booksbackendapi.herokuapp.com/api/books/')
             .then(res => res.json())
             .then(data => this.bookList = data)
             .catch(err => console.log(err.message))
