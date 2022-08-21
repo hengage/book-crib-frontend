@@ -3,6 +3,10 @@
     <h1>Book Crib</h1>
     <router-link to="/">Home</router-link> |
     <router-link to="/authors">Authors</router-link>
+
+    <p>Are you an author and want your book to be seen? then 
+      <router-link :to="{name: 'signup'}">sIgn up</router-link>
+    </p>
   </nav>
   <router-view/>
 </template>
