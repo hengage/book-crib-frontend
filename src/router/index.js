@@ -1,7 +1,11 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
+
+
 import BookListView from '../views/BooksViews/BookListView'
-import AuthorListView from '../views/AuthorsViews/AuthorListView'
 import SingleBookView from '../views/BooksViews/SingleBookView'
+
+import AuthorListView from '../views/AuthorsViews/AuthorListView'
+import SingleAuthorView from '../views/AuthorsViews/SingleAuthorView'
 
 const routes = [
   {
@@ -10,15 +14,21 @@ const routes = [
     component: BookListView
   },
   {
+    path: '/books/:id',
+    name: 'singlebook',
+    component: SingleBookView
+  },
+  {
     path: '/authors',
     name: 'authors',
     component: AuthorListView
   },
   {
-    path: '/books/:id',
-    name: 'singlebook',
-    component: SingleBookView
-  },
+    path: '/authors/:id',
+    name: 'singleauthor',
+    component: SingleAuthorView
+  }
+  
  
 ]
 
