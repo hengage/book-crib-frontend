@@ -1,6 +1,6 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
-import BookListView from '../views/BookListView'
-import AuthorListView from '../views/AuthorListView'
+import BookListView from '../views/BooksViews/BookListView'
+import AuthorListView from '../views/AuthorsViews/AuthorListView'
 
 const routes = [
   {
