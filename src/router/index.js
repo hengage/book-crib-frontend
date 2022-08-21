@@ -3,9 +3,9 @@ import { createRouter, createWebHashHistory } from 'vue-router'
 
 import BookListView from '../views/BooksViews/BookListView'
 import SingleBookView from '../views/BooksViews/SingleBookView'
-
 import AuthorListView from '../views/AuthorsViews/AuthorListView'
 import SingleAuthorView from '../views/AuthorsViews/SingleAuthorView'
+import PageNotFoundErrorView from '../views/PageNotFoundErrorView'
 
 const routes = [
   {
@@ -27,7 +27,13 @@ const routes = [
     path: '/authors/:id',
     name: 'singleauthor',
     component: SingleAuthorView
-  }
+  },
+  
+  {
+    path: '/:catchAll(.*)',
+    name: 'pagenotfound',
+    component: PageNotFoundErrorView
+  },
   
  
 ]
