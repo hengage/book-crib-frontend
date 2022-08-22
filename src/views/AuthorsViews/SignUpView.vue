@@ -47,7 +47,7 @@ export default {
     },
     methods: {
         handleSubmit() {
-            axios.post('http://127.0.0.1:8000/api/authors/', this.formData, {
+            axios.post('https://booksbackendapi.herokuapp.com/api/authors/', this.formData, {
             })
                 .then(response => console.log(response))
                 .catch(err => console.log(err))
