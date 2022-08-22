@@ -60,30 +60,31 @@ export default {
                 this.$route.params.id + '/',
                 this.formData, {
             })
-                .then(response =>{
+                .then(response => {
                     console.log('RESPONSE:', response);
                     this.$router.push({ name: 'singleauthor' })
                 })
                 .catch(err => {
                     console.log(err)
-            });
+                });
 
             console.log('FORMDATA:', this.formData)
+        },
+        async getUSer() {
+
         }
     },
     mounted() {
-        axios.get('http://127.0.0.1:8000/api/authors/' + this.$route.params.id,)
-            .then(data => this.author = data)
+        axios.get(
+            'https://booksbackendapi.herokuapp.com/api/authors/' +
+            this.$route.params.id
+            )
+            .then(data =>{
+                this.author = data
+                this.formData = this.author.data
+            } )
             .catch(err => console.log(err.message))
-
-        setTimeout(() => {
-            // this.formData.email = this.author.data.email,
-            this.formData = this.author.data
-        }, 1000)
-
     }
-    //
-
 }
 
 </script>
