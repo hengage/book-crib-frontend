@@ -1,8 +1,9 @@
 <template>
   <nav>
     <h1>Book Crib</h1>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/authors">Authors</router-link>
+    <router-link to="/">Home</router-link> &nbsp; | &nbsp;
+    <router-link to="/authors">Authors</router-link>&nbsp; | &nbsp;
+    <router-link :to="{name: 'addBook'}">+ Add book</router-link>
 
     <p>Are you an author and want your book to be seen? then &nbsp; 
       <router-link :to="{ name: 'signup' }"><span> sign up</span></router-link>

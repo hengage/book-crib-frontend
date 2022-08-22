@@ -8,6 +8,7 @@ import SingleAuthorView from '../views/AuthorsViews/SingleAuthorView'
 import PageNotFoundErrorView from '../views/PageNotFoundErrorView'
 import SignUpView from '../views/AuthorsViews/SignUpView'
 import UpdateAuthorView from '../views/AuthorsViews/UpdateAuthorView'
+import AddBookView from '../views/BooksViews/AddBookView'
 
 const routes = [
   {
@@ -20,6 +21,12 @@ const routes = [
     name: 'singlebook',
     component: SingleBookView
   },
+  {
+    path: '/books/add',
+    name: 'addBook',
+    component: AddBookView
+  },
+
   {
     path: '/authors',
     name: 'authors',
