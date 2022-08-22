@@ -1,59 +1,67 @@
 <template>
-    <div class="">
-        <form @submit.prevent="handleSubmit">
-            <label for="">Email</label>
-            <input type="email" name="" v-model="formData.email">
+    <div class="form-container">
+        <h2>Create An Account</h2>
+        
+        <form class="author-form" @submit.prevent="handleSubmit">
+            <div class="container">
+                <label for="">Email</label>
+                <input type="email" name="" v-model="formData.email">
+            </div>
 
-            <label for="firstName">First name</label>
-            <input type="text" v-model="formData.first_name">
+            <div class="container">
+                <label for="firstName">First name</label>
+                <input type="text" v-model="formData.first_name">
+            </div>
 
-            <label for="lastName">Last name</label>
-            <input type="text" v-model="formData.last_name">
+            <div class="container">
+                <label for="lastName">Last name</label>
+                <input type="text" v-model="formData.last_name">
+            </div>
 
-            <label for="password">Password</label>
-            <input type="password" name="" v-model="formData.password">
+            <div class="container">
+                <label for="password">Password</label>
+                <input type="password" name="" v-model="formData.password">
+            </div>
 
-            <button type="submit">Create account</button>
-
-           
+            <button type="submit">Register </button>
         </form>
-        </div>
+    </div>
 </template>
 
 <script>
-    import axios from 'axios'
+import axios from 'axios'
 
-    export default {
-        name: 'SignUpView',
-        // components: { AuthorForm },
-        data() {
-            return {
-                formData: {
-                    email: '',
-                    first_name: '',
-                    last_name: '',
-                    password: ''
-                }
-               
+export default {
+    name: 'SignUpView',
+    // components: { AuthorForm },
+    data() {
+        return {
+            formData: {
+                email: '',
+                first_name: '',
+                last_name: '',
+                password: ''
             }
-        },
-        methods: {
-            handleSubmit() {
-                 axios.post('http://127.0.0.1:8000/api/authors/', this.formData, {
-            })
-            .then(response => console.log(response))
-            .catch(err => console.log(err))
-            .catch((error) => console.log( error.response.request._response ) );
-                console.log('form submitted')
-                console.log(
-                    this.formData
-                )
-            }
-        },
-        mounted() {
-           
+
         }
+    },
+    methods: {
+        handleSubmit() {
+            axios.post('http://127.0.0.1:8000/api/authors/', this.formData, {
+            })
+                .then(response => console.log(response))
+                .catch(err => console.log(err))
+                .catch((error) => console.log(error.response.request._response));
+            console.log('form submitted')
+            console.log(
+                this.formData
+            )
+        }
+    },
+    mounted() {
+
     }
+}
 
 </script>
 
