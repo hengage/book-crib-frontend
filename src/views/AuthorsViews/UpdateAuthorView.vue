@@ -60,14 +60,19 @@ export default {
                 this.$route.params.id + '/',
                 this.formData, {
             })
-                .then(response => console.log(response))
-                .catch(err => console.log(err));
+                .then(response =>{
+                    console.log('RESPONSE:', response);
+                    this.$router.push({ name: 'singleauthor' })
+                })
+                .catch(err => {
+                    console.log(err)
+            });
 
-            console.log(this.formData)
+            console.log('FORMDATA:', this.formData)
         }
     },
     mounted() {
-        axios.get('https://booksbackendapi.herokuapp.com/api/authors/' + this.$route.params.id,)
+        axios.get('http://127.0.0.1:8000/api/authors/' + this.$route.params.id,)
             .then(data => this.author = data)
             .catch(err => console.log(err.message))
 

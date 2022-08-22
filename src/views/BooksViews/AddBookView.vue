@@ -36,8 +36,13 @@ export default {
         handleSubmit() {
             axios.post('https://booksbackendapi.herokuapp.com/api/books/', 
             this.formData, {})
-                .then(response => console.log(response))
-                .catch(err => console.log(err));
+                .then(response =>{
+                    console.log(response)
+                    this.$router.push({name:'home'})
+                })
+                .catch(err => {
+                    console.log(err)
+                });
 
             (console.log('Added book', this.formData))
 
