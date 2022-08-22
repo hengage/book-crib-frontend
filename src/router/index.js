@@ -7,6 +7,7 @@ import AuthorListView from '../views/AuthorsViews/AuthorListView'
 import SingleAuthorView from '../views/AuthorsViews/SingleAuthorView'
 import PageNotFoundErrorView from '../views/PageNotFoundErrorView'
 import SignUpView from '../views/AuthorsViews/SignUpView'
+import UpdateAuthorView from '../views/AuthorsViews/UpdateAuthorView'
 
 const routes = [
   {
@@ -33,6 +34,11 @@ const routes = [
     path: '/authors/register',
     name: 'signup',
     component: SignUpView
+  },
+  {
+    path: '/authors/:id/update',
+    name: 'updateauthor',
+    component: UpdateAuthorView
   },
   
   {

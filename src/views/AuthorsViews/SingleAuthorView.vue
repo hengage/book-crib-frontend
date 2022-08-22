@@ -3,6 +3,11 @@
 
     <div v-if="author">
         {{ author.first_name }} {{ author.last_name }}
+         {{ author.email }}
+
+         <router-link :to="{name:'updateauthor'}">
+            Update author data
+         </router-link>
     </div>
     <div v-else>
         <h3>Fetching data...</h3>
