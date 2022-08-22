@@ -3,11 +3,11 @@
 
     <div v-if="author">
         {{ author.first_name }} {{ author.last_name }}
-         {{ author.email }}
+        {{ author.email }}
 
-         <router-link :to="{name:'updateauthor'}">
+        <router-link :to="{ name: 'updateauthor' }">
             Update author data
-         </router-link>
+        </router-link>
     </div>
     <div v-else>
         <h3>Fetching data...</h3>
@@ -15,20 +15,20 @@
 </template>
 
 <script>
-    export default {
-        name: 'SingleAuthorView',
-        data() {
-            return {
-                author: null
-            }
-        },
-        mounted() {
-            fetch('https://booksbackendapi.herokuapp.com/api/authors/' + this.$route.params.id)
-            // fetch('http://127.0.0.1:8000/api/authors/' + this.$route.params.id)
+export default {
+    name: 'SingleAuthorView',
+    data() {
+        return {
+            author: null
+        }
+    },
+    mounted() {
+        fetch('https://booksbackendapi.herokuapp.com/api/authors/' +
+            this.$route.params.id)
             .then(res => res.json())
             .then(data => this.author = data)
             .catch(err => console.log(err.message))
-        }
     }
+}
 </script>
 

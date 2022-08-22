@@ -2,30 +2,30 @@
     <h2>Update Author</h2>
     <div class="" v-if="author">
 
-    <div class="form-container">
-        <form class="author-form" @submit.prevent="handleSubmit">
-            <div class="container">
-                <label for="">Email</label>
-                <input type="email" name="" v-model="formData.email">
-            </div>
+        <div class="form-container">
+            <form class="author-form" @submit.prevent="handleSubmit">
+                <div class="container">
+                    <label for="">Email</label>
+                    <input type="email" name="" v-model="formData.email">
+                </div>
 
-            <div class="container">
-                <label for="firstName">First name</label>
-                <input type="text" v-model="formData.first_name">
-            </div>
+                <div class="container">
+                    <label for="firstName">First name</label>
+                    <input type="text" v-model="formData.first_name">
+                </div>
 
-            <div class="container">
-                <label for="lastName">Last name</label>
-                <input type="text" v-model="formData.last_name">
-            </div>
+                <div class="container">
+                    <label for="lastName">Last name</label>
+                    <input type="text" v-model="formData.last_name">
+                </div>
 
-            <div class="container">
-                <label for="password">Password</label>
-                <input type="password" name="" v-model="formData.password">
-            </div>
+                <div class="container">
+                    <label for="password">Password</label>
+                    <input type="password" name="" v-model="formData.password">
+                </div>
 
-            <button type="submit">Update </button>
-        </form>
+                <button type="submit">Update </button>
+            </form>
         </div>
     </div>
 
@@ -56,16 +56,14 @@ export default {
     methods: {
         handleSubmit() {
             axios.put(
-                'https://booksbackendapi.herokuapp.com/api/authors/' + this.$route.params.id + '/',
+                'https://booksbackendapi.herokuapp.com/api/authors/' +
+                this.$route.params.id + '/',
                 this.formData, {
             })
                 .then(response => console.log(response))
-                .catch(err => console.log(err))
-                .catch((error) => console.log(error.response.request._response));
-            console.log('form submitted')
-            console.log(
-                this.formData
-            )
+                .catch(err => console.log(err));
+
+            console.log(this.formData)
         }
     },
     mounted() {

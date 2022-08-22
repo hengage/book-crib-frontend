@@ -1,7 +1,7 @@
 <template>
     <div class="form-container">
         <h2>Create An Account</h2>
-        
+
         <form class="author-form" @submit.prevent="handleSubmit">
             <div class="container">
                 <label for="">Email</label>
@@ -47,15 +47,12 @@ export default {
     },
     methods: {
         handleSubmit() {
-            axios.post('https://booksbackendapi.herokuapp.com/api/authors/', this.formData, {
-            })
+            axios.post('https://booksbackendapi.herokuapp.com/api/authors/',
+                this.formData, {})
                 .then(response => console.log(response))
-                .catch(err => console.log(err))
-                .catch((error) => console.log(error.response.request._response));
-            console.log('form submitted')
-            console.log(
-                this.formData
-            )
+                .catch(err => console.log(err));
+
+            console.log(this.formData)
         }
     },
     mounted() {

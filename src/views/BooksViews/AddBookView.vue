@@ -14,7 +14,7 @@
 
             <button type="submit">Save</button>
         </form>
-        
+
     </div>
 </template>
 
@@ -34,16 +34,16 @@ export default {
     },
     methods: {
         handleSubmit() {
-            axios.post('https://booksbackendapi.herokuapp.com/api/books/', this.formData, {
-            })
-            .then(response => console.log(response))
-            .catch(err => console.log(err));
-        
-        (console.log('Added book', this.FormData))
-        
+            axios.post('https://booksbackendapi.herokuapp.com/api/books/', 
+            this.formData, {})
+                .then(response => console.log(response))
+                .catch(err => console.log(err));
+
+            (console.log('Added book', this.formData))
+
         }
     }
-    
+
 }
 </script>
 <style lang="">
