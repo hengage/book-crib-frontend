@@ -3,7 +3,12 @@
         <h2>Title: {{ book.title.toUpperCase()}}</h2>
         <h2>Author: {{ book.author}}</h2>
         <h2>ISBN: {{ book.isbn}}</h2>
+
+        <router-link :to="{ name: 'updateBook' }">
+            Update this book
+        </router-link>
     </div>
+    
     <div v-else>
         <h3>Fetching data...</h3>
     </div>

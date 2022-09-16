@@ -3,6 +3,7 @@ import { createRouter, createWebHashHistory } from 'vue-router'
 
 import BookListView from '../views/BooksViews/BookListView'
 import SingleBookView from '../views/BooksViews/SingleBookView'
+import UpdateBookView from '../views/BooksViews/UpdateBookView'
 import AuthorListView from '../views/AuthorsViews/AuthorListView'
 import SingleAuthorView from '../views/AuthorsViews/SingleAuthorView'
 import PageNotFoundErrorView from '../views/PageNotFoundErrorView'
@@ -17,14 +18,19 @@ const routes = [
     component: BookListView
   },
   {
+    path: '/books/add',
+    name: 'addBook',
+    component: AddBookView
+  },
+  {
     path: '/books/:id',
     name: 'singlebook',
     component: SingleBookView
   },
   {
-    path: '/books/add',
-    name: 'addBook',
-    component: AddBookView
+    path: '/books/:id/update',
+    name: 'updateBook',
+    component: UpdateBookView
   },
 
   {
