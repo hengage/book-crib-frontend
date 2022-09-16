@@ -1,32 +1,34 @@
 <template>
-    <h2>Update Book</h2>
-    <div class="" v-if="book">
+    <div class="update-book book">
+        <h2>Update Book</h2>
+        <div class="" v-if="book">
 
-        <div class="form-container">
-            <form @submit.prevent="handleSubmit" class="book-form">
-                <div class="container">
-                    <label for="title">Title</label>
-                    <input type="text" v-model="formData.title">
-                </div>
+            <div class="form-container">
+                <form @submit.prevent="handleSubmit" class="book-form">
+                    <div class="container">
+                        <label for="title">Title</label>
+                        <input type="text" v-model="formData.title">
+                    </div>
 
-                <div class="container">
-                    <label for="isbn">ISBN</label>
-                    <input type="text" name="isbn" v-model="formData.isbn">
-                </div>
+                    <div class="container">
+                        <label for="isbn">ISBN</label>
+                        <input type="text" name="isbn" v-model="formData.isbn">
+                    </div>
 
-                <div class="container">
+                    <div class="container">
 
-                    <label for="author">Author</label>
-                    <input type="number" name="author" v-model="formData.author">
-                </div>
+                        <label for="author">Author</label>
+                        <input type="number" name="author" v-model="formData.author">
+                    </div>
 
-                <button type="submit">Save</button>
-            </form>
+                    <button type="submit">Save</button>
+                </form>
+            </div>
         </div>
-    </div>
 
-    <div v-else>
-        <h3>Fetching data...</h3>
+        <div v-else>
+            <h3>Fetching data...</h3>
+        </div>
     </div>
 </template>
 
@@ -64,17 +66,17 @@ export default {
 
             console.log('FORMDATA:', this.formData)
         },
-        
+
     },
     mounted() {
         axios.get(
             'https://booksbackendapi.herokuapp.com/api/books/' +
             this.$route.params.id
-            )
-            .then(data =>{
+        )
+            .then(data => {
                 this.book = data
                 this.formData = this.book.data
-            } )
+            })
             .catch(err => console.log(err.message))
     }
 }

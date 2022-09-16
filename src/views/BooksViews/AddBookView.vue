@@ -1,5 +1,5 @@
 <template>
-    <div class="add-book">
+    <div class="add-book book">
         <h2>Add Your Book</h2>
 
         <div class="form-container">
@@ -61,7 +61,7 @@ export default {
 }
 </script>
 <style >
-.add-book {
+.book {
     margin-bottom: 3em;
 }
 
@@ -92,7 +92,7 @@ export default {
 }
 
 @media screen and (min-width:707px) {
-    .add-book .form-container {
+    .book .form-container {
         /* center the parent child in this div (which is the form) */
         display: flex;
         justify-content: center;
