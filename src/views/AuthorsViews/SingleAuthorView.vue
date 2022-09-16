@@ -1,9 +1,13 @@
 <template>
-    <h2>Author</h2>
+    <h1>Author</h1>
 
     <div v-if="author">
-        {{ author.first_name }} {{ author.last_name }}
-        {{ author.email }}
+        <h3>
+            {{ author.first_name }} {{ author.last_name }}
+        </h3>
+        <h4>
+            {{ author.email }}
+        </h4>
 
         <router-link :to="{ name: 'updateauthor' }">
             Update author data

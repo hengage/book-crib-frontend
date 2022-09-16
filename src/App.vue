@@ -25,6 +25,10 @@ body {
   background-color: rgba(128, 118, 85, 0.2);
 }
 
+a {
+  text-decoration: none !important;;
+}
+
 nav {
   padding: 30px;
 }
